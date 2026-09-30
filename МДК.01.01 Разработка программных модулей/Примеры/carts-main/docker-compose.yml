@@ -1,0 +1,65 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: carts
+    build:
+      context: .
+    volumes:
+      - ./src:/app/code
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.defaults
+      - .env
+    depends_on:
+      - db
+      - redis
+    command: sh -c "alembic upgrade head && uvicorn app.api.rest.main:app --host 0.0.0.0 --port 8000 --log-level info --reload"
+
+  worker:
+    build:
+      context: .
+    env_file:
+      - .env.defaults
+      - .env
+    depends_on:
+      - db
+      - redis
+    command: arq app.infra.events.arq.workers.ConsumerSettings --watch .
+
+  periodic:
+    build:
+      context: .
+    env_file:
+      - .env.defaults
+      - .env
+    depends_on:
+      - db
+      - redis
+    command: arq app.infra.events.arq.workers.PeriodicSettings --watch .
+
+  db:
+    image: postgres:14-alpine
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "6432:5432"
+    environment:
+      - TZ=Europe/Moscow
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=template
+
+  redis:
+    image: redis:7.2.1-alpine
+    volumes:
+      - redis-data:/data
+    ports:
+      - "7379:6379"
+    command:
+      - redis-server
+
+volumes:
+  postgres-data:
+  redis-data:
