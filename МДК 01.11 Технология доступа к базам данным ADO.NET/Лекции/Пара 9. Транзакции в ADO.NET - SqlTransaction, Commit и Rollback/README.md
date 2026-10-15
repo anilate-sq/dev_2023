@@ -1,1 +1,1 @@
-[Лекция 5. Транзакции в ADO.NET: SqlTransaction, Commit и Rollback](https://mature-roast-a43.notion.site/5-ADO-NET-3f8e6b7dda8f812fafdcd8eb40599a79)
+[Лекция 5. Транзакции в ADO.NET: SqlTransaction, Commit и Rollback](https://app.notion.com/p/3f8e6b7dda8f8186b06cd373cd09c468)
