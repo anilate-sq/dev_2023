@@ -7,7 +7,7 @@
 | Дисциплина | Перейти к материалам | Где изучать лекции |
 | --- | --- | --- |
 | **МДК 01.10 — Теория баз данных. Программирование MS SQL Server** | [Оглавление курса](%D0%9C%D0%94%D0%9A%2001.10%20%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F%20%D0%B1%D0%B0%D0%B7%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85.%20%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20MS%20SQL%20Server/README.md) | [Notion: MS SQL Server](https://app.notion.com/p/3d0e6b7dda8f80e49380e4174725e8d9) |
-| **МДК 01.11 — Технология доступа к базам данных ADO.NET** | [Оглавление и примеры](%D0%9C%D0%94%D0%9A%2001.11%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0%20%D0%BA%20%D0%B1%D0%B0%D0%B7%D0%B0%D0%BC%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%20ADO.NET/README) | [Notion: ADO.NET](https://app.notion.com/p/3eae6b7dda8f80a6aeccc9bf92d1f0b6) |
+| **МДК 01.11 — Технология доступа к базам данных ADO.NET** | [Оглавление и примеры](%D0%9C%D0%94%D0%9A%2001.11%20%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%D0%B0%20%D0%BA%20%D0%B1%D0%B0%D0%B7%D0%B0%D0%BC%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%20ADO.NET/README.md) | [Notion: ADO.NET](https://app.notion.com/p/3eae6b7dda8f80a6aeccc9bf92d1f0b6) |
 
 Общая информация и практические задания: [Notion группы 9/3-РПО-24/1](https://app.notion.com/p/ba0e6b7dda8f838aac9681b75b7d977e).
 
