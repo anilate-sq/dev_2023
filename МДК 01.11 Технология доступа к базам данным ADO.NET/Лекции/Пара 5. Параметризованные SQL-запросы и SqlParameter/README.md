@@ -1,0 +1,1 @@
+[Лекция 3. Параметризованные SQL-запросы и SqlParameter](https://mature-roast-a43.notion.site/SQL-SqlParameter-3f1e6b7dda8f808988c9c866f8cb1bf3?source=copy_link)
