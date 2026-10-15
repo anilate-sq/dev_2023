@@ -1,1 +1,1 @@
-[Лекция 2.Выполнение SQL-запросов с помощью SqlCommand](https://mature-roast-a43.notion.site/2-SQL-C-SqlCommand-3f1e6b7dda8f8063890dfed4f2b4c6ca?source=copy_link)
+[Лекция 2. Выполнение SQL-запросов с помощью SqlCommand](https://app.notion.com/p/3f1e6b7dda8f80089166f257cecb684d)
