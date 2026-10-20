@@ -1,0 +1,1 @@
+[Лекция 8. Отключённая модель ADO.NET: DataTable, DataSet и SqlDataAdapter](https://mature-roast-a43.notion.site/ADO-NET-DataTable-DataSet-SqlDataAdapter-3fee6b7dda8f81c893bdf1b1cadba824)
