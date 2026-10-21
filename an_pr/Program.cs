@@ -1,46 +1,79 @@
-﻿// SqlDataAdapter - преобразование данных. С помощью него можем заполнить DataTable и DataSet данными из SQL-запроса
+﻿// Создание сущности
 
-using System.Data;
+using System.Dynamic;
+using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using Microsoft.Data.SqlClient;
 
 string connectionString =
-    "Server=localhost;Database=coffee_shop;Trusted_Connection=True;TrustServerCertificate=True;";
+	"Server=localhost;Database=coffee_shop;Trusted_Connection=True;TrustServerCertificate=True;";
 
-string sql = "SELECT id, name, price, is_available FROM products";
+var options = new DbContextOptionsBuilder<CoffeeShopContext>()
+    .UseSqlServer(connectionString)
+    .Options;
 
-using SqlConnection connection = new SqlConnection(connectionString);
-using SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+await using CoffeeShopContext db = new CoffeeShopContext(options);
 
-DataTable products = new DataTable();
-adapter.Fill(products); // заполняем DataTable данными из адаптера
 
-Console.WriteLine($"Загружено товаров: {products.Rows.Count}");
-
-// Вывод данных с DataTable
-foreach (DataRow row in products.Rows)
+public class Category
 {
-    int id = row.Field<int>("id");
-    string name = row.Field<string>("name")!;
-    decimal price = row.Field<decimal>("price");
-    bool isAvailable = row.Field<bool>("is_available");
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
 
-    Console.WriteLine($"{id}. {name} — {price} руб.");
-    Console.WriteLine(isAvailable ? "Доступен" : "Недоступен");
+    public List<Product> Products { get; set; } = new();
 }
 
-// Фильтрация данных и сортировка
-DataRow[] available = products.Select("is_available = true", "price ASC"); // Получаем все товары, которые есть в наличии и сортируем их по цене
-
-foreach (DataRow row in available)
+public class Product
 {
-    Console.WriteLine($"{row["name"]} — {row["price"]} руб.");
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public int CategoryId { get; set; }
+    public decimal Price { get; set; }
+    public bool IsAvailable { get; set; }
+    public Category Category { get; set; } = null;
 }
 
-// Убираем дубликацию таблицы
-products.DefaultView.Sort = "price DESC"; // Обратная сортировка и создание представления
-
-// Создаем представление и выводим его содержание
-foreach (DataRowView row in products.DefaultView)
+public class CoffeeShopContext : DbContext
 {
-    Console.WriteLine($"{row["name"]} — {row["price"]} руб.");
+    public CoffeeShopContext(DbContextOptions<CoffeeShopContext> options)
+        : base(options) { }
+
+    public DbSet<Product> Products => Set<Product>();
+    public DbSet<Category> Categories => Set<Category>();
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Product>(entity =>
+        {
+            entity.ToTable("products");
+            entity.HasKey(p => p.Id);
+
+            entity.Property(p => p.Id).HasColumnName("id");
+            entity.Property(p => p.Name).HasColumnName("name");
+            entity.Property(p => p.CategoryId).HasColumnName("category_id");
+            entity.Property(p => p.Price)
+                .HasColumnName("price")
+                .HasColumnType("decimal(10,2)");
+            entity.Property(p => p.IsAvailable)
+                .HasColumnName("is_available");
+        });
+
+        modelBuilder.Entity<Category>(entity =>
+        {
+            entity.ToTable("categories");
+            entity.HasKey(c => c.Id);
+            entity.Property(c => c.Id).HasColumnName("id");
+            entity.Property(c => c.Name).HasColumnName("name");
+        });
+
+        // Создаем связь
+        modelBuilder.Entity<Product>(entity =>
+        {
+            entity.HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryId);
+        });
+    }
 }
