@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Андрей\\Desktop\\группы\\dev_2023\\an_pr\\an_pr.csproj": {}
+    "/Users/andrew/Desktop/Учебные группы/dev_2023/an_pr/an_pr.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Андрей\\Desktop\\группы\\dev_2023\\an_pr\\an_pr.csproj": {
+    "/Users/andrew/Desktop/Учебные группы/dev_2023/an_pr/an_pr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Андрей\\Desktop\\группы\\dev_2023\\an_pr\\an_pr.csproj",
+        "projectUniqueName": "/Users/andrew/Desktop/Учебные группы/dev_2023/an_pr/an_pr.csproj",
         "projectName": "an_pr",
-        "projectPath": "C:\\Users\\Андрей\\Desktop\\группы\\dev_2023\\an_pr\\an_pr.csproj",
-        "packagesPath": "C:\\Users\\Андрей\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Андрей\\Desktop\\группы\\dev_2023\\an_pr\\obj\\",
+        "projectPath": "/Users/andrew/Desktop/Учебные группы/dev_2023/an_pr/an_pr.csproj",
+        "packagesPath": "/Users/andrew/.nuget/packages/",
+        "outputPath": "/Users/andrew/Desktop/Учебные группы/dev_2023/an_pr/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Андрей\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/andrew/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -93,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.401/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
