@@ -1,0 +1,1 @@
+[TCP как поток байтов. Buffer, кодировки и границы сообщений](https://mature-roast-a43.notion.site/TCP-Buffer-40ce6b7dda8f812baa98ec3341d9aa21)
