@@ -1,0 +1,16 @@
+{
+  "name": "ex_03_netlab",
+  "version": "1.0.0",
+  "description": "```bash npm init -y npm install ws ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ws": "^8.23.0"
+  }
+}
